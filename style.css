@@ -71,8 +71,8 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50px;
-  padding: 40px 0;
+  /* height: 50px; */
+  padding: 25px 0;
   border: 2px dashed var(--neutral-500);
   border-radius: 10px;
   background: var(--neutral-900);
@@ -110,12 +110,26 @@ input {
   color: var(--neutral-500);
   margin-bottom: 8px;
 }
-
-.preview-container {
-  margin-top: 20px;
-  display: none;
+.img-selected {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    border: 1px solid var(--neutral-300);
 }
-
+.btn-input {
+    cursor: pointer;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background-color: var(--neutral-700);
+    color: var(--neutral-300);
+}
+.btn-input:hover {
+    text-decoration: 1px solid var(--neutral-300);
+}
+#preview-container {
+    display: none;
+}
 .preview-container img {
   max-width: 100%;
   max-height: 200px;
@@ -139,6 +153,7 @@ input {
     grid-template-rows: 50% 50%;
     box-sizing: border-box;
     padding: 1em;
+    width: 360px;
     height: 186px;
     background-image: url('./assets/images/pattern-ticket.svg');
     background-repeat: no-repeat;
@@ -161,6 +176,7 @@ input {
     display: flex;
     align-content: space-around;
     flex-wrap: wrap;
+    row-gap: 1em;
 }
 .center {
     display: flex;
@@ -224,7 +240,7 @@ input {
     text-align: center;
 }
 .title {
-    font-size: 30px;
+    font-size: 36px;
 }
 .title-2 {
     font-size: 28px;
@@ -330,6 +346,9 @@ form {
     background-attachment: fixed;
     z-index: -1;
 }
+.generated-tickets {
+    display: none;
+}
 @media screen and (min-width: 600px) and (max-width: 900px) {
     .background {
         background-image: url('./assets/images/background-tablet.png');
@@ -337,12 +356,8 @@ form {
 }
 @media screen and (min-width: 901px) {
     .generated-tickets {
-        display: block;
-        width: 400px;
+        width: 470px;
         padding: 1em;
-    }
-    .form {
-        display: none;
     }
     form {
         width: 400px;

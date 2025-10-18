@@ -28,11 +28,21 @@
       <label for="avatar">Upload Avatar</label>
       <div class="file-upload-wrapper">
         <input type="file" name="image-file" id="img-file" accept="image/*" class="file-input">
-        <label for="img-file" class="upload-area">
-          <img src="./assets/images/icon-upload.svg" alt="icon-upload" class="upload-icon">
-          <div class="upload-text">Drag and drop or click to upload</div>
+        <label for="img-file" class="upload-area center gap-1">
+          <div class="empty">
+            <img src="./assets/images/icon-upload.svg" alt="icon-upload" class="upload-icon">
+            <div class="upload-text">Drag and drop or click to upload</div>
+          </div>
+          <div class="preview-container space-between" id="preview-container">
+            <div class="center w-full">
+              <img class="img-selected" src="#" alt="image preview">
+            </div>
+            <div class="center w-full">
+              <button class="btn-input">Remove image</button>
+              <button class="btn-input">Change image</button>
+            </div>
+          </div>
         </label>
-        <div class="preview-container" id="preview-container"></div>
       </div>
       <div class="left gap-2 mb-2">
         <img src="./assets/images/icon-info.svg" alt="info">
@@ -67,33 +77,37 @@
       <p class="description text-center">
         We've emailed your ticket to <span class="email">jonatan@email.com</span> and will send updates in the run up to the event.
       </p>
-      <div class="ticket">
-        <!-- info -->
-        <div class="left align-top items-1">
-          <div class="left align-top">
-            <img src="./assets/images/logo-mark.svg" alt="logo-mark" class="logo-mark">
-          </div>
-          <div>
-            <span class="text-logo-mark title-2">Coding Conf</span>
-            <span class="ticket-description mt-2">Jan 31, 2025 / Austin, TX</span>
-          </div>
-        </div>
-        <div class="bottom items-3">
-          <!-- passenger here -->
-          <div class="w-16">
-            <img src="./assets/images/image-avatar.jpg" alt="Avatar" class="avatar">
-          </div>
-          <div class="w-80 h-3 center">
-            <div class="w-full gap-1">
-              <span class="w-full" id="full">Jonatan Kristof</span>
-              <img src="./assets/images/icon-github.svg" alt="github" class="github">
-              <span class="count username">@jonatankristof0101</span>
+      <div class="center">
+        <div class="ticket">
+          <!-- info -->
+          <div class="left align-top items-1">
+            <div class="left align-top">
+              <img src="./assets/images/logo-mark.svg" alt="logo-mark" class="logo-mark">
+            </div>
+            <div>
+              <span class="text-logo-mark title-2">Coding Conf</span>
+              <span class="ticket-description mt-2">Jan 31, 2025 / Austin, TX</span>
             </div>
           </div>
-        </div>
-        <div class="center items-2">
-          <!-- numero here -->
-           <p class="code">#01609</p>
+          <div class="bottom items-3">
+            <!-- passenger here -->
+            <div class="w-16">
+              <img src="./assets/images/image-avatar.jpg" alt="Avatar" class="avatar">
+            </div>
+            <div class="w-80 h-3 center">
+              <div class="w-full gap-1">
+                <span class="w-full" id="fullname-write">Jonatan Kristof</span>
+                <div class="count username left gap-1">
+                  <img src="./assets/images/icon-github.svg" alt="github" class="github">
+                  @jonatankristof0101
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="center items-2">
+            <!-- numero here -->
+             <p class="code">#01609</p>
+          </div>
         </div>
       </div>
     </div>

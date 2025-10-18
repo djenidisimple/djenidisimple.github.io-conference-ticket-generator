@@ -1,3 +1,21 @@
+const fileInput = document.getElementById('img-file');
+const imgSelected = document.querySelector(".img-selected")
+const empty = document.querySelector(".empty")
+const previewContainer = document.querySelector("#preview-container")
+const avatar = document.querySelector(".avatar")
+fileInput.addEventListener('change', function(event) {
+    const file = event.target.files[0]
+    if (file) {
+        const reader = new FileReader()
+        reader.addEventListener('load', function() {
+            imgSelected.src = reader.result;
+            empty.style.display = "none"
+            previewContainer.style.display = "block"
+        })
+        reader.readAsDataURL(file)
+    }
+})
+
 const generate = () => {
     const form = document.querySelector(".form")
     const ticket = document.querySelector(".generated-tickets")
@@ -14,5 +32,5 @@ const generate = () => {
     }
     emailWrite.innerHTML = email.value
     usernameWrite.innerHTML = username.value
-    console.table(fullname.value)
+    avatar.src = imgSelected.src
 }
