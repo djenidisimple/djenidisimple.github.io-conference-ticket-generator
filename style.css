@@ -19,6 +19,8 @@
 ================ */
 * {
     z-index: 2;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 /* ===========
@@ -37,9 +39,9 @@ html {
 }
 body {
     position: relative;
-    height: 100vh;
     font-family: Inconsolata;
     overflow-x: hidden;
+    height: 100vh;
     color: var(--neutral-0);
     padding: 0;
 }
@@ -149,7 +151,7 @@ input:focus {
 .btn-input {
     cursor: pointer;
     border: none;
-    width: 75px;
+    width: 95px;
     padding: 6px 8px;
     border-radius: 5px;
     font-size: 12px;
@@ -237,6 +239,7 @@ label.btn-input {
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+    overflow-x: hidden;
 }
 .p-1 {
     padding: 1em;
@@ -315,6 +318,7 @@ label.btn-input {
     color: var(--orange-700);
 }
 .message-error-1, .message-error-2, .message-error-3 {
+    width: 100%;
     display: none;
     color: var(--orange-700) !important;
 }
@@ -425,14 +429,13 @@ form {
     display: none;
 }
 .background {
-    display: inline;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     background-image: url('./assets/images/background-mobile.png');
-    background-position: left;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -477,19 +480,19 @@ main {
         height: 180px;
     }
     .title {
-        font-size: 36px;
+        font-size: 40px;
     }
     .generated-tickets {
         width: 470px;
         padding: 1em;
     }
     form {
-        max-width: 400px;
+        max-width: 600px;
         margin-left: 1em;
         margin-right: 1em;
     }
-    input ,.btn-genere,.upload-area {
-        width: 100%;
+    input ,.btn-genere,.upload-area, .message, .message-error-1, .message-error-2, .message-error-3 {
+        width: 400px;
     }
     main {
         padding: 1em;

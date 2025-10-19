@@ -25,53 +25,55 @@
     <!-- Form starts -->
     <form class="form">
       <h1 class="text-center title">Your Journey to Coding Conf 2025 Starts Here!</h1>
-      <p class="description text-center">Secure your spot at next year's biggest coding conference.</p>
-      <label for="avatar">Upload Avatar</label>
-      <div class="w-full upload-area">
-        <input type="file" name="image-file" id="img-file" accept="image/*" class="file-input">
-        <label for="img-file" class="center gap-1" id="label-input-file">
-          <div class="empty">
-            <img src="./assets/images/icon-upload.svg" alt="icon-upload" class="upload-icon">
-            <div class="upload-text">Drag and drop or click to upload</div>
-          </div>
-        </label>
-        <div class="preview-container space-between" id="preview-container">
-          <div class="center w-full">
-            <img class="img-selected" src="#" alt="image preview">
-          </div>
-          <div class="center w-full">
-            <a class="btn-input text-decorate" onclick="remove()">Remove image</a>
-            <input type="file" class="file-input" id="file-change">
-            <label for="file-change" class="btn-input">
-              Change image
-            </label>
+      <p class="description text-center mt-2 mb-2">Secure your spot at next year's biggest coding conference.</p>
+      <div class="center">
+        <label for="avatar">Upload Avatar</label>
+        <div class="w-full upload-area">
+          <input type="file" name="image-file" id="img-file" accept="image/*" class="file-input">
+          <label for="img-file" class="center gap-1" id="label-input-file">
+            <div class="empty">
+              <img src="./assets/images/icon-upload.svg" alt="icon-upload" class="upload-icon">
+              <div class="upload-text">Drag and drop or click to upload</div>
+            </div>
+          </label>
+          <div class="preview-container space-between" id="preview-container">
+            <div class="center w-full">
+              <img class="img-selected" src="#" alt="image preview">
+            </div>
+            <div class="center w-full">
+              <a class="btn-input text-decorate" onclick="remove()">Remove image</a>
+              <input type="file" class="file-input" id="file-change">
+              <label for="file-change" class="btn-input">
+                Change image
+              </label>
+            </div>
           </div>
         </div>
+        <div class="left gap-2 mt-2 mb-1 message">
+          <img src="./assets/images/icon-info.svg" alt="info">
+          <span class="upload-description">Upload your photo (JPG or PNG, max size: 500KB).</span>
+        </div>
+        
+        <label for="fullname">Full Name</label>
+        <input type="text" name="fullname" id="fullname" placeholder="">
+        <div class="left gap-2 mb-1 message-error-1">
+          <img src="./assets/images/icon-info.svg" alt="info" class="icon-info">
+          <span class="size-xs">Full Name is required.</span>
+        </div>
+        <label for="email">Email Address</label>
+        <input type="email" name="email" placeholder="example@email.com" id="email">
+        <div class="left gap-2 mb-1 message-error-2">
+          <img src="./assets/images/icon-info.svg" alt="info" class="icon-info">
+          <span class="size-xs">Please enter a valid email address.</span>
+        </div>
+        <label for="github">GitHub Username</label>
+        <input type="text" name="github" placeholder="@yourusername" id="username">
+        <div class="left gap-2 mb-1 message-error-3">
+          <img src="./assets/images/icon-info.svg" alt="info" class="icon-info">
+          <span class="size-xs">GitHub Username is required.</span>
+        </div>
+        <button type="button" class="btn-genere" onclick="generate()">Generate My Ticket</button>
       </div>
-      <div class="left gap-2 mb-2 mt-2">
-        <img src="./assets/images/icon-info.svg" alt="info">
-        <span class="upload-description">Upload your photo (JPG or PNG, max size: 500KB).</span>
-      </div>
-      
-      <label for="fullname">Full Name</label>
-      <input type="text" name="fullname" id="fullname" placeholder="">
-      <div class="left gap-2 mb-1 message-error-1">
-        <img src="./assets/images/icon-info.svg" alt="info" class="icon-info">
-        <span class="size-xs">Full Name is required.</span>
-      </div>
-      <label for="email">Email Address</label>
-      <input type="email" name="email" placeholder="example@email.com" id="email">
-      <div class="left gap-2 mb-1 message-error-2">
-        <img src="./assets/images/icon-info.svg" alt="info" class="icon-info">
-        <span class="size-xs">Please enter a valid email address.</span>
-      </div>
-      <label for="github">GitHub Username</label>
-      <input type="text" name="github" placeholder="@yourusername" id="username">
-      <div class="left gap-2 mb-1 message-error-3">
-        <img src="./assets/images/icon-info.svg" alt="info" class="icon-info">
-        <span class="size-xs">GitHub Username is required.</span>
-      </div>
-      <button type="button" class="btn-genere" onclick="generate()">Generate My Ticket</button>
     </form>
     <!-- Form ends -->
   
@@ -100,9 +102,9 @@
             <div class="w-80 h-3 center">
               <div class="w-full gap-1 size-md">
                 <span class="w-full fullname-write">Jonatan Kristof</span>
-                <div class="count username left gap-1">
+                <div class="count left gap-1">
                   <img src="./assets/images/icon-github.svg" alt="github" class="github">
-                  @jonatankristof0101
+                  <span class="username">@jonatankristof0101</span>
                 </div>
               </div>
             </div>

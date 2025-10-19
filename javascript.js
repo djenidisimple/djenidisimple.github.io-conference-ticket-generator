@@ -55,7 +55,7 @@ const generate = () => {
     } else {
         messageError_1.style.display = 'none';
     }
-    if (email.value.length == 0) {
+    if (email.value.length == 0 || !valideEmail(email.value)) {
         messageError_2.style.display = 'flex';
     } else {
         messageError_2.style.display = 'none';
@@ -65,7 +65,7 @@ const generate = () => {
     } else {
         messageError_3.style.display = 'none';
     }
-    if ((fileInput.value.length > 0 || fileChange.value.length > 0) && fullname.value.length > 0 && username.value.length > 0 && email.value.length > 0) {
+    if ((fileInput.value.length > 0 || fileChange.value.length > 0) && fullname.value.length > 0 && username.value.length > 0 && (email.value.length > 0 && valideEmail(email.value))) {
         form.style.display = "none"
         ticket.style.display = "block"
         for (let i = 0; i < fullnameWrite.length; i++) {
@@ -83,4 +83,9 @@ const remove = () => {
     empty.style.display = "block"
     labelInputFile.style.display = "flex"
     previewContainer.style.display = "none"
+}
+
+const valideEmail = (value) => {
+    const emailRegex = /^[a-z][a-zA-Z0-9._%+-]*@email\.com$/;
+    return emailRegex.test(value)
 }
