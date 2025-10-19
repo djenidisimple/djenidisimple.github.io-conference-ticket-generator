@@ -38,7 +38,7 @@ const generate = () => {
     const form = document.querySelector(".form")
     const ticket = document.querySelector(".generated-tickets")
     const fullname = document.querySelector("#fullname")
-    const fullnameWrite = document.querySelectorAll("span#fullname-write")
+    const fullnameWrite = document.querySelectorAll(".fullname-write")
     const email = document.querySelector("#email")
     const emailWrite = document.querySelector(".email")
     const username = document.querySelector("#username")
