@@ -1,8 +1,10 @@
 const fileInput = document.getElementById('img-file');
+const fileChange = document.getElementById('file-change');
 const imgSelected = document.querySelector(".img-selected")
 const empty = document.querySelector(".empty")
 const previewContainer = document.querySelector("#preview-container")
 const avatar = document.querySelector(".avatar")
+const labelInputFile = document.querySelector("#label-input-file")
 fileInput.addEventListener('change', function(event) {
     const file = event.target.files[0]
     if (file) {
@@ -10,7 +12,23 @@ fileInput.addEventListener('change', function(event) {
         reader.addEventListener('load', function() {
             imgSelected.src = reader.result;
             empty.style.display = "none"
-            previewContainer.style.display = "block"
+            labelInputFile.style.display = "none"
+            previewContainer.style.display = "flex"
+        })
+        reader.readAsDataURL(file)
+    }
+})
+
+fileChange.addEventListener('change', function(event) {
+    fileInput.value = ""
+    const file = event.target.files[0]
+    if (file) {
+        const reader = new FileReader()
+        reader.addEventListener('load', function() {
+            imgSelected.src = reader.result;
+            empty.style.display = "none"
+            labelInputFile.style.display = "none"
+            previewContainer.style.display = "flex"
         })
         reader.readAsDataURL(file)
     }
@@ -33,4 +51,12 @@ const generate = () => {
     emailWrite.innerHTML = email.value
     usernameWrite.innerHTML = username.value
     avatar.src = imgSelected.src
+}
+
+const remove = () => {
+    fileInput.value = "";
+    imgSelected.src = ""
+    empty.style.display = "block"
+    labelInputFile.style.display = "flex"
+    previewContainer.style.display = "none"
 }

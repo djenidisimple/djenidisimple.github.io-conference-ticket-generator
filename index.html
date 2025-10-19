@@ -26,23 +26,26 @@
       <h1 class="text-center title">Your Journey to Coding Conf 2025 Starts Here!</h1>
       <p class="description text-center">Secure your spot at next year's biggest coding conference.</p>
       <label for="avatar">Upload Avatar</label>
-      <div class="file-upload-wrapper">
+      <div class="w-full upload-area">
         <input type="file" name="image-file" id="img-file" accept="image/*" class="file-input">
-        <label for="img-file" class="upload-area center gap-1">
+        <label for="img-file" class="center gap-1" id="label-input-file">
           <div class="empty">
             <img src="./assets/images/icon-upload.svg" alt="icon-upload" class="upload-icon">
             <div class="upload-text">Drag and drop or click to upload</div>
           </div>
-          <div class="preview-container space-between" id="preview-container">
-            <div class="center w-full">
-              <img class="img-selected" src="#" alt="image preview">
-            </div>
-            <div class="center w-full">
-              <button class="btn-input">Remove image</button>
-              <button class="btn-input">Change image</button>
-            </div>
-          </div>
         </label>
+        <div class="preview-container space-between" id="preview-container">
+          <div class="center w-full">
+            <img class="img-selected" src="#" alt="image preview">
+          </div>
+          <div class="center w-full">
+            <a class="btn-input text-decorate" onclick="remove()">Remove image</a>
+            <input type="file" class="file-input" id="file-change">
+            <label for="file-change" class="btn-input">
+              Change image
+            </label>
+          </div>
+        </div>
       </div>
       <div class="left gap-2 mb-2">
         <img src="./assets/images/icon-info.svg" alt="info">
@@ -50,7 +53,7 @@
       </div>
       
       <label for="fullname">Full Name</label>
-      <input type="text" name="fullname" id="fullname">
+      <input type="text" name="fullname" id="fullname" placeholder="">
       <div class="left gap-2 mb-1 message-error">
         <img src="./assets/images/icon-info.svg" alt="info">
         <span class="upload-description">Upload your photo (JPG or PNG, max size: 500KB).</span>
@@ -82,11 +85,8 @@
           <!-- info -->
           <div class="left align-top items-1">
             <div class="left align-top">
-              <img src="./assets/images/logo-mark.svg" alt="logo-mark" class="logo-mark">
-            </div>
-            <div>
-              <span class="text-logo-mark title-2">Coding Conf</span>
-              <span class="ticket-description mt-2">Jan 31, 2025 / Austin, TX</span>
+              <img src="./assets/images/logo-full.svg" alt="logo-mark">
+              <span class="ticket-description mt-2 date">Jan 31, 2025 / Austin, TX</span>
             </div>
           </div>
           <div class="bottom items-3">

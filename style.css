@@ -1,21 +1,35 @@
+/* ========= 
+    color 
+============*/
 :root {
     --neutral-0: hsl(0, 0%, 100%);
     --neutral-300: hsl(252, 6%, 83%);
     --neutral-500: hsl(245, 15%, 58%);
     --neutral-700: hsl(245, 19%, 35%);
     --neutral-900: hsl(248, 70%, 10%);
+    --neutral-900-transparente: rgba(42, 39, 61, 0.4);
+    --neutral-700-transparente: rgba(89, 83, 128, 0.4);
     --orange-500: hsl(7, 88%, 67%);
     --orange-700: hsl(7, 71%, 60%);
 }
 .attribution { font-size: 11px; text-align: center;margin-top: 15px;margin-bottom: 55px; }
 .attribution a { color: hsl(228, 45%, 44%); }
+/* =============
+    default
+================ */
 * {
     z-index: 2;
 }
+/* ===========
+    font-family
+============== */
 @font-face {
     font-family: Inconsolata;
     src: url('./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf');
 }
+/* ============
+    layout 
+=============== */
 html {
     height: 100%;
     margin: 0;
@@ -31,11 +45,13 @@ body {
 label {
     display: block;
     font-size: 20px;
+    width: 400px;
     margin-bottom: 10px;
 }
 input {
     cursor: pointer;
     width: 100%;
+    max-width: 400px;
     height: 45px;
     border-radius: 10px;
     background: inherit;
@@ -43,6 +59,13 @@ input {
     margin-bottom: 20px;
     color: white;
     text-indent: 12px;
+    background-color: var(--neutral-900-transparente);
+}
+input:hover {
+    background: var(--neutral-700-transparente);
+}
+input:focus {
+    border-color: var(--neutral-0);
 }
 .hidden-file-input {
   display: none;
@@ -59,9 +82,6 @@ input {
   border-radius: 6px;
   cursor: pointer;
 }
-.file-upload-wrapper {
-  width: 100%;
-}
 .file-input {
   display: none;
 }
@@ -71,18 +91,26 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 50px; */
-  padding: 25px 0;
+  width: 400px;
+  padding: 18px 0;
   border: 2px dashed var(--neutral-500);
   border-radius: 10px;
-  background: var(--neutral-900);
+  background: var(--neutral-900-transparente);
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
 }
 
 .upload-area:hover {
-    background: var(--neutral-700);
+    background: var(--neutral-700-transparente);
+}
+.upload-area:hover .upload-text {
+    color: var(--neutral-300);
+}
+.upload-text {
+  font-size: 16px;
+  color: var(--neutral-500);
+  margin-bottom: 8px;
 }
 .email {
     color: var(--orange-700);
@@ -105,27 +133,39 @@ input {
     margin-bottom: 12px;
 }
 
-.upload-text {
-  font-size: 16px;
-  color: var(--neutral-500);
-  margin-bottom: 8px;
-}
 .img-selected {
     width: 55px;
     height: 55px;
     border-radius: 12px;
     border: 1px solid var(--neutral-300);
 }
+.date {
+    text-indent: 50px;
+    line-height: 1px;
+}
 .btn-input {
     cursor: pointer;
     border: none;
-    padding: 7px 10px;
+    width: 75px;
+    padding: 6px 8px;
     border-radius: 5px;
-    background-color: var(--neutral-700);
+    font-size: 12px;
+    background-color: var(--neutral-700-transparente);
     color: var(--neutral-300);
+    font-weight: 700;
+}
+label.btn-input {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    vertical-align: middle;
+}
+.text-decorate {
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 .btn-input:hover {
-    text-decoration: 1px solid var(--neutral-300);
+    text-decoration: underline;
 }
 #preview-container {
     display: none;
@@ -141,20 +181,29 @@ input {
 .btn-genere {
     cursor: pointer;
     width: 100%;
+    max-width: 400px;
     height: 45px;
     border-radius: 8px;
     border: none;
     background-color: var(--orange-700);
+    color: var(--neutral-900);
+    font-weight: bold;
     z-index: 20;
+}
+.btn-genere:focus {
+    border-color: var(--neutral-0);
+}
+.btn-genere:hover {
+    border: 1px solid var(--neutral-500);
 }
 .ticket {
     display: grid;
     grid-template-columns: 90% 10%;
     grid-template-rows: 50% 50%;
     box-sizing: border-box;
-    padding: 1em;
-    width: 360px;
-    height: 186px;
+    padding: 1.2em;
+    width: 450px;
+    height: 220px;
     background-image: url('./assets/images/pattern-ticket.svg');
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -176,7 +225,7 @@ input {
     display: flex;
     align-content: space-around;
     flex-wrap: wrap;
-    row-gap: 1em;
+    gap: 1em;
 }
 .center {
     display: flex;
@@ -314,7 +363,8 @@ input {
     z-index: -1;
 }
 form {
-    z-index: 10;
+    max-width: 400px;
+    z-index: 2;
 }
 .pattern-circle {
     display: none;
@@ -349,6 +399,9 @@ form {
 .generated-tickets {
     display: none;
 }
+/* ===========
+    Responsive
+============= */
 @media screen and (min-width: 600px) and (max-width: 900px) {
     .background {
         background-image: url('./assets/images/background-tablet.png');
