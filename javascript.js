@@ -43,19 +43,43 @@ const generate = () => {
     const emailWrite = document.querySelector(".email")
     const username = document.querySelector("#username")
     const usernameWrite = document.querySelector(".username")
-    form.style.display = "none"
-    ticket.style.display = "block"
-    for (let i = 0; i < fullnameWrite.length; i++) {
-        fullnameWrite[i].innerHTML = fullname.value
+    const messageError = document.querySelector(".upload-description")
+    const messageError_1 = document.querySelector(".message-error-1")
+    const messageError_2 = document.querySelector(".message-error-2")
+    const messageError_3 = document.querySelector(".message-error-3")
+    if (fileInput.value.length == 0 || fileChange.value.length == 0) {
+        messageError.style.color = 'hsl(7, 71%, 60%)';
     }
-    emailWrite.innerHTML = email.value
-    usernameWrite.innerHTML = username.value
-    avatar.src = imgSelected.src
+    if (fullname.value.length == 0) {
+        messageError_1.style.display = 'flex';
+    } else {
+        messageError_1.style.display = 'none';
+    }
+    if (email.value.length == 0) {
+        messageError_2.style.display = 'flex';
+    } else {
+        messageError_2.style.display = 'none';
+    }
+    if (username.value.length == 0) {
+        messageError_3.style.display = 'flex';
+    } else {
+        messageError_3.style.display = 'none';
+    }
+    if ((fileInput.value.length > 0 || fileChange.value.length > 0) && fullname.value.length > 0 && username.value.length > 0 && email.value.length > 0) {
+        form.style.display = "none"
+        ticket.style.display = "block"
+        for (let i = 0; i < fullnameWrite.length; i++) {
+            fullnameWrite[i].innerHTML = fullname.value
+        }
+        emailWrite.innerHTML = email.value
+        usernameWrite.innerHTML = username.value
+        avatar.src = imgSelected.src
+    }
 }
 
 const remove = () => {
     fileInput.value = "";
-    imgSelected.src = ""
+    imgSelected.src = "#"
     empty.style.display = "block"
     labelInputFile.style.display = "flex"
     previewContainer.style.display = "none"

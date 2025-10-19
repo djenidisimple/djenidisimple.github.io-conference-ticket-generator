@@ -85,7 +85,9 @@ input:focus {
 .file-input {
   display: none;
 }
-
+.form {
+    display: none;
+}
 .upload-area {
   display: flex;
   flex-direction: column;
@@ -132,7 +134,10 @@ input:focus {
     background: var(--neutral-700);
     margin-bottom: 12px;
 }
-
+.icon-info {
+    fill: var(--orange-700);
+    stroke: var(--orange-700);
+}
 .img-selected {
     width: 55px;
     height: 55px;
@@ -140,7 +145,7 @@ input:focus {
     border: 1px solid var(--neutral-300);
 }
 .date {
-    text-indent: 50px;
+    text-indent: 35px;
     line-height: 1px;
 }
 .btn-input {
@@ -201,12 +206,13 @@ label.btn-input {
     grid-template-columns: 90% 10%;
     grid-template-rows: 50% 50%;
     box-sizing: border-box;
-    padding: 1.2em;
-    width: 450px;
-    height: 220px;
+    padding: 1.5em;
+    padding-left: 1em;
+    width: 480px;
+    height: 180px;
     background-image: url('./assets/images/pattern-ticket.svg');
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: contain;
     background-position: center;
 }
 .items-1 {
@@ -289,7 +295,7 @@ label.btn-input {
     text-align: center;
 }
 .title {
-    font-size: 36px;
+    font-size: 30px;
 }
 .title-2 {
     font-size: 28px;
@@ -308,26 +314,39 @@ label.btn-input {
     margin-bottom: 1em;
 }
 .message-error {
+    color: var(--orange-700);
+}
+.message-error-1, .message-error-2, .message-error-3 {
+    display: none;
     color: var(--orange-700) !important;
 }
 .mb-2 {
     margin-bottom: 2em;
 }
-.bg-red {
-    background-color: red;
-}
 .avatar {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 8px;
+}
+.img-title {
+    width: 58%;
 }
 .upload-description {
     color: var(--neutral-500);
     font-size: 12px;
+    margin-left: 12px;
 }
 .description {
-    color: var(--neutral-500);
+    color: var(--neutral-300);
     font-size: 16px;
+}
+.size-xs {
+    font-size: 12px;
+    margin-left: 8px;
+}
+.size-md {
+    font-size: 14px;
+    line-height: 150%;
 }
 .ticket-description {
     width: 100%;
@@ -363,7 +382,7 @@ label.btn-input {
     z-index: -1;
 }
 form {
-    max-width: 400px;
+    max-width: 340px;
     z-index: 2;
 }
 .pattern-circle {
@@ -388,7 +407,7 @@ form {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-image: url('./assets/images/background-mobile.png');
     background-position: left;
     background-size: cover;
@@ -397,23 +416,45 @@ form {
     z-index: -1;
 }
 .generated-tickets {
-    display: none;
+    width: 340px;
 }
 /* ===========
     Responsive
 ============= */
 @media screen and (min-width: 600px) and (max-width: 900px) {
+    form {
+        max-width: 400px;
+        z-index: 2;
+    }
     .background {
         background-image: url('./assets/images/background-tablet.png');
     }
+    .title {
+        font-size: 36px;
+    }
+    .ticket {
+        padding: 1em;
+        padding-left: 1em;
+        width: 380px;
+        height: 180px;
+    }
 }
 @media screen and (min-width: 901px) {
+    .ticket {
+        padding: 1em;
+        padding-left: 1em;
+        width: 380px;
+        height: 180px;
+    }
+    .title {
+        font-size: 36px;
+    }
     .generated-tickets {
         width: 470px;
         padding: 1em;
     }
     form {
-        width: 400px;
+        max-width: 400px;
         margin-left: 1em;
         margin-right: 1em;
     }

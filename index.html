@@ -47,28 +47,28 @@
           </div>
         </div>
       </div>
-      <div class="left gap-2 mb-2">
+      <div class="left gap-2 mb-2 mt-2">
         <img src="./assets/images/icon-info.svg" alt="info">
-        <span class="upload-description">Upload your photo (JPG or PNG, max size: 500KB).</ span>
+        <span class="upload-description">Upload your photo (JPG or PNG, max size: 500KB).</span>
       </div>
       
       <label for="fullname">Full Name</label>
       <input type="text" name="fullname" id="fullname" placeholder="">
-      <div class="left gap-2 mb-1 message-error">
-        <img src="./assets/images/icon-info.svg" alt="info">
-        <span class="upload-description">Upload your photo (JPG or PNG, max size: 500KB).</span>
+      <div class="left gap-2 mb-1 message-error-1">
+        <img src="./assets/images/icon-info.svg" alt="info" class="icon-info">
+        <span class="size-xs">Full Name is required.</span>
       </div>
       <label for="email">Email Address</label>
       <input type="email" name="email" placeholder="example@email.com" id="email">
-      <div class="left gap-2 mb-1 message-error">
-        <img src="./assets/images/icon-info.svg" alt="info">
-        <span class="upload-description">Please enter a valid email address.</span>
+      <div class="left gap-2 mb-1 message-error-2">
+        <img src="./assets/images/icon-info.svg" alt="info" class="icon-info">
+        <span class="size-xs">Please enter a valid email address.</span>
       </div>
       <label for="github">GitHub Username</label>
       <input type="text" name="github" placeholder="@yourusername" id="username">
-      <div class="left gap-2 mb-1 message-error">
-        <img src="./assets/images/icon-info.svg" alt="info">
-        <span class="upload-description">Upload your photo (JPG or PNG, max size: 500KB).</span>
+      <div class="left gap-2 mb-1 message-error-3">
+        <img src="./assets/images/icon-info.svg" alt="info" class="icon-info">
+        <span class="size-xs">GitHub Username is required.</span>
       </div>
       <button type="button" class="btn-genere" onclick="generate()">Generate My Ticket</button>
     </form>
@@ -85,7 +85,7 @@
           <!-- info -->
           <div class="left align-top items-1">
             <div class="left align-top">
-              <img src="./assets/images/logo-full.svg" alt="logo-mark">
+              <img src="./assets/images/logo-full.svg" alt="logo-mark" class="img-title">
               <span class="ticket-description mt-2 date">Jan 31, 2025 / Austin, TX</span>
             </div>
           </div>
@@ -95,7 +95,7 @@
               <img src="./assets/images/image-avatar.jpg" alt="Avatar" class="avatar">
             </div>
             <div class="w-80 h-3 center">
-              <div class="w-full gap-1">
+              <div class="w-full gap-1 size-md">
                 <span class="w-full" id="fullname-write">Jonatan Kristof</span>
                 <div class="count username left gap-1">
                   <img src="./assets/images/icon-github.svg" alt="github" class="github">
@@ -116,7 +116,7 @@
     
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-      Coded by <a href="#">Djenidi</a>.
+      Coded by <a href="https://github.com/djenidisimple">Djenidi</a>.
     </div>
     <script src="./javascript.js"></script>
   </main>
