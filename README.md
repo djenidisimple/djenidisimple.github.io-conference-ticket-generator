@@ -10,25 +10,13 @@ Thanks for checking out this front-end coding challenge.
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [Screenshot Desktop](#screenshot-desktop)
-  - [Screenshot Mobile](#screenshot-mobile)
-  - [Links](#links)
+- [Links](#links)
 - [Author](#author)
-
-## Overview
-### Screenshot Desktop
-
-![Screenshot of 3-column preview card component](./images/Screenshot-desktop.jpeg)
-
-### Screenshot Mobile
-
-![Screenshot of 3-column preview card component](./images/Screenshot-mobile.jpeg)
 
 ### Links
 
-- Solution [here](https://github.com/djenidisimple/djenidisimple.github.io-3-column-preview-card-component)
-- Live Site [here](https://djenidisimple.github.io/djenidisimple.github.io-3-column-preview-card-component/)
+- Solution [here](https://github.com/djenidisimple/djenidisimple.github.io-conference-ticket-generator)
+- Live Site [here](https://djenidisimple.github.io/djenidisimple.github.io-conference-ticket-generator/)
 
 ## Author
 - Website - [Djenidi](https://github.com/djenidisimple)
