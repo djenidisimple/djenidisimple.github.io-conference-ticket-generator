@@ -14,15 +14,6 @@
 }
 .attribution { font-size: 11px; text-align: center;margin-top: 15px;margin-bottom: 55px; }
 .attribution a { color: hsl(228, 45%, 44%); }
-/* =============
-    default
-================ */
-* {
-    z-index: 2;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 /* ===========
     font-family
 ============== */
@@ -30,20 +21,30 @@
     font-family: Inconsolata;
     src: url('./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf');
 }
+/* =============
+    default
+================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* ============
     layout 
 =============== */
-html {
+html, body {
+    width: 100%;
     height: 100%;
     margin: 0;
+    padding: 0;
 }
+
 body {
     position: relative;
     font-family: Inconsolata;
     overflow-x: hidden;
-    height: 100vh;
+    min-height: 100vh;
     color: var(--neutral-0);
-    padding: 0;
 }
 label {
     display: block;
@@ -432,13 +433,12 @@ form {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-image: url('./assets/images/background-mobile.png');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     z-index: -1;
 }
 .generated-tickets {
