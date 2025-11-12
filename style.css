@@ -11,6 +11,7 @@
     --neutral-700-transparente: rgba(89, 83, 128, 0.4);
     --orange-500: hsl(7, 88%, 67%);
     --orange-700: hsl(7, 71%, 60%);
+    --bg-image: url('./assets/images/background-mobile.png');
 }
 .attribution { font-size: 11px; text-align: center;margin-top: 15px;margin-bottom: 55px; }
 .attribution a { color: hsl(228, 45%, 44%); }
@@ -33,20 +34,37 @@
     layout 
 =============== */
 html {
-    overflow: hidden;
+    overflow: auto;
+    height: 100%;
 }
 html, body {
-    width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     position: relative;
     font-family: Inconsolata;
     color: var(--neutral-0);
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--bg-image);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    min-height: 100%;
 }
 label {
     display: block;
@@ -428,18 +446,6 @@ form {
     position: absolute;
     display: none;
 }
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('./assets/images/background-mobile.png');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-}
 .generated-tickets {
     display: none;
     width: 340px;
@@ -453,12 +459,12 @@ main {
     Responsive
 ============= */
 @media screen and (min-width: 600px) and (max-width: 900px) {
+    :root {
+        --bg-image: url('./assets/images/background-tablet.png');
+    }
     form {
         max-width: 400px;
         z-index: 2;
-    }
-    .background {
-        background-image: url('./assets/images/background-tablet.png');
     }
     .title {
         font-size: 36px;
@@ -471,6 +477,9 @@ main {
     }
 }
 @media screen and (min-width: 901px) {
+    :root {
+        --bg-image: url('./assets/images/background-desktop.png');
+    }
     .ticket {
         padding: 1em;
         padding-left: 1em;
@@ -494,9 +503,6 @@ main {
     }
     main {
         padding: 1em;
-    }
-    .background {
-        background-image: url('./assets/images/background-desktop.png');
     }
     .squiggly-line-top {
         display: inline;
